@@ -7,12 +7,13 @@ const Z = 90;
 module.exports = emoji;
 
 function emoji( country ){
+	if (!country || country === '') return '';
 	const formatted = country.toUpperCase();
-	const f = country.codePointAt(0);
-	const s = country.codePointAt(1);
+	const f = formatted.codePointAt(0);
+	const s = formatted.codePointAt(1);
 
 	if (
-		country.length !== 2
+		formatted.length !== 2
 		|| f > Z || f < A
 		|| s > Z || s < A
 	)
