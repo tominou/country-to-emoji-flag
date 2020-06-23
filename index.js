@@ -17,7 +17,7 @@ function emoji( country ){
 		|| f > Z || f < A
 		|| s > Z || s < A
 	)
-		throw new Error('Not an alpha2 country code');
+		return '';
 
 	return String.fromCodePoint(f + offset)
 		+String.fromCodePoint(s + offset);
